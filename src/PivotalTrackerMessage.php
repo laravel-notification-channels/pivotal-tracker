@@ -1,11 +1,10 @@
 <?php
 
-namespace NotificationChannels\pivotal-tracker;
+namespace NotificationChannels\PivotalTracker;
 
+use NotificationChannels\PivotalTracker\Exceptions\CouldNotCreateMessage;
 
-use NotificationChannels\pivotal-tracker\Exceptions\CouldNotCreateMessage;
-
-class pivotal-trackerMessage
+class PivotalTrackerMessage
 {
     /** @var string */
     protected $name;

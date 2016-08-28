@@ -1,10 +1,10 @@
 <?php
 
-namespace NotificationChannels\pivotal-tracker;
+namespace NotificationChannels\PivotalTracker;
 
 use Illuminate\Support\ServiceProvider;
 
-class pivotal-trackerServiceProvider extends ServiceProvider
+class PivotalTrackerServiceProvider extends ServiceProvider
 {
     /**
      * Bootstrap the application services.

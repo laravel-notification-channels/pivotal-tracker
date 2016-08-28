@@ -3,7 +3,7 @@
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/laravel-notification-channels/pivotal-tracker.svg?style=flat-square)](https://packagist.org/packages/laravel-notification-channels/pivotal-tracker)
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md)
 [![Build Status](https://img.shields.io/travis/laravel-notification-channels/pivotal-tracker/master.svg?style=flat-square)](https://travis-ci.org/laravel-notification-channels/pivotal-tracker)
-[![StyleCI](https://styleci.io/repos/:style_ci_id/shield)](https://styleci.io/repos/:style_ci_id)
+[![StyleCI](https://styleci.io/repos/66170357/shield)](https://styleci.io/repos/66170357)
 [![SensioLabsInsight](https://img.shields.io/sensiolabs/i/:sensio_labs_id.svg?style=flat-square)](https://insight.sensiolabs.com/projects/:sensio_labs_id)
 [![Quality Score](https://img.shields.io/scrutinizer/g/laravel-notification-channels/pivotal-tracker.svg?style=flat-square)](https://scrutinizer-ci.com/g/laravel-notification-channels/pivotal-tracker)
 [![Code Coverage](https://img.shields.io/scrutinizer/coverage/g/laravel-notification-channels/pivotal-tracker/master.svg?style=flat-square)](https://scrutinizer-ci.com/g/laravel-notification-channels/pivotal-tracker/?branch=master)

@@ -4,9 +4,9 @@ namespace NotificationChannels\pivotal-tracker;
 
 use GuzzleHttp\Client;
 use Illuminate\Notifications\Notification;
-use NotificationChannels\pivotal-tracker\Exceptions\CouldNotSendNotification;
+use NotificationChannels\PivotalTracker\Exceptions\CouldNotSendNotification;
 
-class pivotal-trackerChannel
+class PivotalTrackerChannel
 {
     const API_ENDPOINT = 'https://www.pivotal-tracker.com/services/v5/';
 
@@ -25,7 +25,7 @@ class pivotal-trackerChannel
      * @param mixed $notifiable
      * @param \Illuminate\Notifications\Notification $notification
      *
-     * @throws \NotificationChannels\pivotal-tracker\Exceptions\CouldNotSendNotification
+     * @throws \NotificationChannels\PivotalTracker\Exceptions\CouldNotSendNotification
      */
     public function send($notifiable, Notification $notification)
     {

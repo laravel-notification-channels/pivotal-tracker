@@ -1,6 +1,6 @@
 <?php
 
-namespace NotificationChannels\pivotal-tracker\Exceptions;
+namespace NotificationChannels\PivotalTracker\Exceptions;
 
 use Exception;
 
