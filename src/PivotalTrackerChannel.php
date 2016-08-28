@@ -1,6 +1,6 @@
 <?php
 
-namespace NotificationChannels\pivotal-tracker;
+namespace NotificationChannels\PivotalTracker;
 
 use GuzzleHttp\Client;
 use Illuminate\Notifications\Notification;
