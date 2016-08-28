@@ -1,14 +1,14 @@
 <?php
 
-namespace NotificationChannels\pivotal-tracker\Test;
+namespace NotificationChannels\PivotalTracker\Test;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\Psr7\Response;
 use Illuminate\Notifications\Notification;
 use Mockery;
-use NotificationChannels\pivotal-tracker\Exceptions\CouldNotSendNotification;
-use NotificationChannels\pivotal-tracker\pivotal-trackerChannel;
-use NotificationChannels\pivotal-tracker\pivotal-trackerMessage;
+use NotificationChannels\PivotalTracker\Exceptions\CouldNotSendNotification;
+use NotificationChannels\PivotalTracker\PivotalTrackerChannel;
+use NotificationChannels\PivotalTracker\PivotalTrackerMessage;
 use Orchestra\Testbench\TestCase;
 
 class ChannelTest extends TestCase

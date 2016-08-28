@@ -29,7 +29,7 @@ class PivotalTrackerChannel
      */
     public function send($notifiable, Notification $notification)
     {
-        if (!$routing = collect($notifiable->routeNotificationFor('pivotal-tracker'))) {
+        if (!$routing = collect($notifiable->routeNotificationFor('PivotalTracker'))) {
             return;
         }
 

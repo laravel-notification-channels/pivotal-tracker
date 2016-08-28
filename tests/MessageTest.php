@@ -1,14 +1,14 @@
 <?php
 
-namespace NotificationChannels\pivotal-tracker\Test;
+namespace NotificationChannels\PivotalTracker\Test;
 
 use Illuminate\Support\Arr;
-use NotificationChannels\pivotal-tracker\Exceptions\CouldNotCreateMessage;
-use NotificationChannels\pivotal-tracker\pivotal-trackerMessage;
+use NotificationChannels\PivotalTracker\Exceptions\CouldNotCreateMessage;
+use NotificationChannels\PivotalTracker\PivotalTrackerMessage;
 
 class MessageTest extends \PHPUnit_Framework_TestCase
 {
-    /** @var \NotificationChannels\pivotal-tracker\pivotal-trackerMessage */
+    /** @var \NotificationChannels\pivotal-tracker\PivotalTrackerMessage */
     protected $message;
 
     function setUp()
