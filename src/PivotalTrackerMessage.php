@@ -75,7 +75,7 @@ class PivotalTrackerMessage
      */
     public function type($type)
     {
-        if (!StoryType::isValid($type)) {
+        if (! StoryType::isValid($type)) {
             throw CouldNotCreateMessage::invalidStoryType($type);
         }
 
@@ -95,7 +95,7 @@ class PivotalTrackerMessage
      */
     public function labels($labels)
     {
-        $this->labels = is_array($labels) ? $labels : func_get_args();;
+        $this->labels = is_array($labels) ? $labels : func_get_args();
 
         return $this;
     }
