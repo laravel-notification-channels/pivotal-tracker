@@ -29,7 +29,7 @@ class PivotalTrackerChannel
      */
     public function send($notifiable, Notification $notification)
     {
-        if (!$routing = collect($notifiable->routeNotificationFor('PivotalTracker'))) {
+        if (! $routing = collect($notifiable->routeNotificationFor('PivotalTracker'))) {
             return;
         }
 
@@ -57,6 +57,6 @@ class PivotalTrackerChannel
      */
     protected function storiesEndpoint($projectId)
     {
-        return self::API_ENDPOINT . "projects/{$projectId}/stories";
+        return self::API_ENDPOINT."projects/{$projectId}/stories";
     }
 }

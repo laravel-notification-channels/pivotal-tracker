@@ -11,7 +11,7 @@ class MessageTest extends \PHPUnit_Framework_TestCase
     /** @var \NotificationChannels\PivotalTracker\PivotalTrackerMessage */
     protected $message;
 
-    function setUp()
+    public function setUp()
     {
         parent::setUp();
 
@@ -19,7 +19,7 @@ class MessageTest extends \PHPUnit_Framework_TestCase
     }
 
     /** @test */
-    function it_accepts_a_name_when_constructing_a_message()
+    public function it_accepts_a_name_when_constructing_a_message()
     {
         $message = new PivotalTrackerMessage('Name');
 
@@ -27,7 +27,7 @@ class MessageTest extends \PHPUnit_Framework_TestCase
     }
 
     /** @test */
-    function it_provides_a_create_method()
+    public function it_provides_a_create_method()
     {
         $message = PivotalTrackerMessage::create('Name');
 
@@ -35,7 +35,7 @@ class MessageTest extends \PHPUnit_Framework_TestCase
     }
 
     /** @test */
-    function it_can_set_the_name()
+    public function it_can_set_the_name()
     {
         $this->message->name('Story name');
 
@@ -43,7 +43,7 @@ class MessageTest extends \PHPUnit_Framework_TestCase
     }
 
     /** @test */
-    function it_can_set_the_description()
+    public function it_can_set_the_description()
     {
         $this->message->description('Story description');
 
@@ -51,7 +51,7 @@ class MessageTest extends \PHPUnit_Framework_TestCase
     }
 
     /** @test */
-    function it_can_set_the_story_type()
+    public function it_can_set_the_story_type()
     {
         $this->message->type('feature');
 
@@ -59,7 +59,7 @@ class MessageTest extends \PHPUnit_Framework_TestCase
     }
 
     /** @test */
-    function it_throws_an_exception_when_story_type_is_invalid()
+    public function it_throws_an_exception_when_story_type_is_invalid()
     {
         $this->setExpectedException(CouldNotCreateMessage::class);
 
@@ -67,7 +67,7 @@ class MessageTest extends \PHPUnit_Framework_TestCase
     }
 
     /** @test */
-    function it_can_set_story_labels_from_array()
+    public function it_can_set_story_labels_from_array()
     {
         $this->message->labels(['foo', 'bar']);
 
@@ -75,11 +75,10 @@ class MessageTest extends \PHPUnit_Framework_TestCase
     }
 
     /** @test */
-    function it_can_set_story_labels_from_arguments()
+    public function it_can_set_story_labels_from_arguments()
     {
         $this->message->labels('foo', 'bar');
 
         $this->assertEquals(['foo', 'bar'], Arr::get($this->message->toArray(), 'labels'));
     }
-
 }

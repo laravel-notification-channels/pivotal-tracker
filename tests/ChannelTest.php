@@ -14,7 +14,7 @@ use Orchestra\Testbench\TestCase;
 class ChannelTest extends TestCase
 {
     /** @test */
-    function it_can_send_a_notification()
+    public function it_can_send_a_notification()
     {
         $response = new Response(200);
 
@@ -41,7 +41,7 @@ class ChannelTest extends TestCase
     }
 
     /** @test */
-    function it_throws_an_exception_when_it_could_not_send_the_notification()
+    public function it_throws_an_exception_when_it_could_not_send_the_notification()
     {
         $this->setExpectedException(CouldNotSendNotification::class);
 
