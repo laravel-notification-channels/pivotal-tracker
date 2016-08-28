@@ -25,12 +25,12 @@
     },
     "autoload": {
         "psr-4": {
-            "NotificationChannels\\pivotal-tracker\\": "src"
+            "NotificationChannels\\PivotalTracker\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "NotificationChannels\\pivotal-tracker\\Test\\": "tests"
+            "NotificationChannels\\PivotalTracker\\Test\\": "tests"
         }
     },
     "scripts": {

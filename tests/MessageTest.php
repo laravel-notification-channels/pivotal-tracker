@@ -8,20 +8,20 @@ use NotificationChannels\PivotalTracker\PivotalTrackerMessage;
 
 class MessageTest extends \PHPUnit_Framework_TestCase
 {
-    /** @var \NotificationChannels\pivotal-tracker\PivotalTrackerMessage */
+    /** @var \NotificationChannels\PivotalTracker\PivotalTrackerMessage */
     protected $message;
 
     function setUp()
     {
         parent::setUp();
 
-        $this->message = new pivotal-trackerMessage();
+        $this->message = new PivotalTrackerMessage();
     }
 
     /** @test */
     function it_accepts_a_name_when_constructing_a_message()
     {
-        $message = new pivotal-trackerMessage('Name');
+        $message = new PivotalTrackerMessage('Name');
 
         $this->assertEquals('Name', Arr::get($message->toArray(), 'name'));
     }
@@ -29,7 +29,7 @@ class MessageTest extends \PHPUnit_Framework_TestCase
     /** @test */
     function it_provides_a_create_method()
     {
-        $message = pivotal-trackerMessage::create('Name');
+        $message = PivotalTrackerMessage::create('Name');
 
         $this->assertEquals('Name', Arr::get($message->toArray(), 'name'));
     }

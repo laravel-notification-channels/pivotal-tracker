@@ -36,7 +36,7 @@ class ChannelTest extends TestCase
                 ])
             ->andReturn($response);
 
-        $channel = new pivotal-trackerChannel($client);
+        $channel = new PivotalTrackerChannel($client);
         $channel->send(new TestNotifiable(), new TestNotification());
     }
 
@@ -52,7 +52,7 @@ class ChannelTest extends TestCase
             ->once()
             ->andReturn($response);
 
-        $channel = new pivotal-trackerChannel($client);
+        $channel = new PivotalTrackerChannel($client);
         $channel->send(new TestNotifiable(), new TestNotification());
     }
 }
@@ -61,7 +61,7 @@ class TestNotifiable
 {
     use \Illuminate\Notifications\Notifiable;
 
-    public function routeNotificationForpivotal-tracker()
+    public function routeNotificationForPivotalTracker()
     {
         return [
             'token' => 'NotifiableToken',
@@ -72,10 +72,10 @@ class TestNotifiable
 
 class TestNotification extends Notification
 {
-    public function topivotal-tracker($notifiable)
+    public function toPivotalTracker($notifiable)
     {
         return
-            (new pivotal-trackerMessage('Story name'))
+            (new PivotalTrackerMessage('Story name'))
                 ->description('Story description')
                 ->type('bug')
                 ->labels(['bug', 'env-production']);

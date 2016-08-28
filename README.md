@@ -38,20 +38,20 @@ composer require laravel-notification-channels/pivotal-tracker
 
 Now you can use the channel in your via() method inside the notification:
     
-    use NotificationChannels\pivotal-tracker\pivotal-trackerChannel;
-    use NotificationChannels\pivotal-tracker\pivotal-trackerMessage;
+    use NotificationChannels\PivotalTracker\PivotalTrackerChannel;
+    use NotificationChannels\PivotalTracker\PivotalTrackerMessage;
     use Illuminate\Notifications\Notification;
     
     class AnApplicationEvent extends Notification
     {
         public function via($notifiable)
         {
-            return [pivotal-trackerChannel::class];
+            return [PivotalTrackerChannel::class];
         }
     
-        public function topivotal-tracker($notifiable)
+        public function toPivotalTracker($notifiable)
         {
-           return (new pivotal-trackerMessage('Something just occurred!'))
+           return (new PivotalTrackerMessage('Something just occurred!'))
                        ->description('This is a test for a notification via Pivotal Tracker.')
                        ->type('bug')
                        ->labels(['a_chore', 'just_a_test']);

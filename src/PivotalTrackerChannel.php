@@ -33,7 +33,7 @@ class PivotalTrackerChannel
             return;
         }
 
-        $parameters = $notification->topivotal-tracker($notifiable)->toArray();
+        $parameters = $notification->toPivotalTracker($notifiable)->toArray();
 
         $response = $this->client->request('POST', $this->storiesEndpoint($routing->get('projectId')), [
             'headers' => [
