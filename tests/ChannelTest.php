@@ -1,14 +1,14 @@
 <?php
 
-namespace NotificationChannels\PivotalTracker\Test;
+namespace NotificationChannels\pivotal-tracker\Test;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\Psr7\Response;
 use Illuminate\Notifications\Notification;
 use Mockery;
-use NotificationChannels\PivotalTracker\Exceptions\CouldNotSendNotification;
-use NotificationChannels\PivotalTracker\PivotalTrackerChannel;
-use NotificationChannels\PivotalTracker\PivotalTrackerMessage;
+use NotificationChannels\pivotal-tracker\Exceptions\CouldNotSendNotification;
+use NotificationChannels\pivotal-tracker\pivotal-trackerChannel;
+use NotificationChannels\pivotal-tracker\pivotal-trackerMessage;
 use Orchestra\Testbench\TestCase;
 
 class ChannelTest extends TestCase
@@ -21,7 +21,7 @@ class ChannelTest extends TestCase
         $client = Mockery::mock(Client::class);
         $client->shouldReceive('request')
             ->once()
-            ->with('POST', 'https://www.pivotaltracker.com/services/v5/projects/ProjectId/stories',
+            ->with('POST', 'https://www.pivotal-tracker.com/services/v5/projects/ProjectId/stories',
                 [
                     'headers' => [
                         'X-TrackerToken' => 'NotifiableToken',
@@ -36,7 +36,7 @@ class ChannelTest extends TestCase
                 ])
             ->andReturn($response);
 
-        $channel = new PivotalTrackerChannel($client);
+        $channel = new pivotal-trackerChannel($client);
         $channel->send(new TestNotifiable(), new TestNotification());
     }
 
@@ -52,7 +52,7 @@ class ChannelTest extends TestCase
             ->once()
             ->andReturn($response);
 
-        $channel = new PivotalTrackerChannel($client);
+        $channel = new pivotal-trackerChannel($client);
         $channel->send(new TestNotifiable(), new TestNotification());
     }
 }
@@ -61,7 +61,7 @@ class TestNotifiable
 {
     use \Illuminate\Notifications\Notifiable;
 
-    public function routeNotificationForPivotalTracker()
+    public function routeNotificationForpivotal-tracker()
     {
         return [
             'token' => 'NotifiableToken',
@@ -72,10 +72,10 @@ class TestNotifiable
 
 class TestNotification extends Notification
 {
-    public function toPivotalTracker($notifiable)
+    public function topivotal-tracker($notifiable)
     {
         return
-            (new PivotalTrackerMessage('Story name'))
+            (new pivotal-trackerMessage('Story name'))
                 ->description('Story description')
                 ->type('bug')
                 ->labels(['bug', 'env-production']);

@@ -1,14 +1,14 @@
 <?php
 
-namespace NotificationChannels\PivotalTracker;
+namespace NotificationChannels\pivotal-tracker;
 
 use GuzzleHttp\Client;
 use Illuminate\Notifications\Notification;
-use NotificationChannels\PivotalTracker\Exceptions\CouldNotSendNotification;
+use NotificationChannels\pivotal-tracker\Exceptions\CouldNotSendNotification;
 
-class PivotalTrackerChannel
+class pivotal-trackerChannel
 {
-    const API_ENDPOINT = 'https://www.pivotaltracker.com/services/v5/';
+    const API_ENDPOINT = 'https://www.pivotal-tracker.com/services/v5/';
 
     /** @var Client */
     protected $client;
@@ -25,15 +25,15 @@ class PivotalTrackerChannel
      * @param mixed $notifiable
      * @param \Illuminate\Notifications\Notification $notification
      *
-     * @throws \NotificationChannels\PivotalTracker\Exceptions\CouldNotSendNotification
+     * @throws \NotificationChannels\pivotal-tracker\Exceptions\CouldNotSendNotification
      */
     public function send($notifiable, Notification $notification)
     {
-        if (!$routing = collect($notifiable->routeNotificationFor('PivotalTracker'))) {
+        if (!$routing = collect($notifiable->routeNotificationFor('pivotal-tracker'))) {
             return;
         }
 
-        $parameters = $notification->toPivotalTracker($notifiable)->toArray();
+        $parameters = $notification->topivotal-tracker($notifiable)->toArray();
 
         $response = $this->client->request('POST', $this->storiesEndpoint($routing->get('projectId')), [
             'headers' => [

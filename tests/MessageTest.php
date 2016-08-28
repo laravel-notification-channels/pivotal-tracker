@@ -1,27 +1,27 @@
 <?php
 
-namespace NotificationChannels\PivotalTracker\Test;
+namespace NotificationChannels\pivotal-tracker\Test;
 
 use Illuminate\Support\Arr;
-use NotificationChannels\PivotalTracker\Exceptions\CouldNotCreateMessage;
-use NotificationChannels\PivotalTracker\PivotalTrackerMessage;
+use NotificationChannels\pivotal-tracker\Exceptions\CouldNotCreateMessage;
+use NotificationChannels\pivotal-tracker\pivotal-trackerMessage;
 
 class MessageTest extends \PHPUnit_Framework_TestCase
 {
-    /** @var \NotificationChannels\PivotalTracker\PivotalTrackerMessage */
+    /** @var \NotificationChannels\pivotal-tracker\pivotal-trackerMessage */
     protected $message;
 
     function setUp()
     {
         parent::setUp();
 
-        $this->message = new PivotalTrackerMessage();
+        $this->message = new pivotal-trackerMessage();
     }
 
     /** @test */
     function it_accepts_a_name_when_constructing_a_message()
     {
-        $message = new PivotalTrackerMessage('Name');
+        $message = new pivotal-trackerMessage('Name');
 
         $this->assertEquals('Name', Arr::get($message->toArray(), 'name'));
     }
@@ -29,7 +29,7 @@ class MessageTest extends \PHPUnit_Framework_TestCase
     /** @test */
     function it_provides_a_create_method()
     {
-        $message = PivotalTrackerMessage::create('Name');
+        $message = pivotal-trackerMessage::create('Name');
 
         $this->assertEquals('Name', Arr::get($message->toArray(), 'name'));
     }

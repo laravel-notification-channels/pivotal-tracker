@@ -1,21 +1,21 @@
 # Pivotal Tracker notification channel for Laravel 5.3
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/laravel-notification-channels/pivotaltracker.svg?style=flat-square)](https://packagist.org/packages/laravel-notification-channels/pivotaltracker)
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/laravel-notification-channels/pivotal-tracker.svg?style=flat-square)](https://packagist.org/packages/laravel-notification-channels/pivotal-tracker)
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md)
-[![Build Status](https://img.shields.io/travis/laravel-notification-channels/pivotaltracker/master.svg?style=flat-square)](https://travis-ci.org/laravel-notification-channels/pivotaltracker)
+[![Build Status](https://img.shields.io/travis/laravel-notification-channels/pivotal-tracker/master.svg?style=flat-square)](https://travis-ci.org/laravel-notification-channels/pivotal-tracker)
 [![StyleCI](https://styleci.io/repos/:style_ci_id/shield)](https://styleci.io/repos/:style_ci_id)
 [![SensioLabsInsight](https://img.shields.io/sensiolabs/i/:sensio_labs_id.svg?style=flat-square)](https://insight.sensiolabs.com/projects/:sensio_labs_id)
-[![Quality Score](https://img.shields.io/scrutinizer/g/laravel-notification-channels/pivotaltracker.svg?style=flat-square)](https://scrutinizer-ci.com/g/laravel-notification-channels/pivotaltracker)
-[![Code Coverage](https://img.shields.io/scrutinizer/coverage/g/laravel-notification-channels/pivotaltracker/master.svg?style=flat-square)](https://scrutinizer-ci.com/g/laravel-notification-channels/pivotaltracker/?branch=master)
-[![Total Downloads](https://img.shields.io/packagist/dt/laravel-notification-channels/pivotaltracker.svg?style=flat-square)](https://packagist.org/packages/laravel-notification-channels/pivotaltracker)
+[![Quality Score](https://img.shields.io/scrutinizer/g/laravel-notification-channels/pivotal-tracker.svg?style=flat-square)](https://scrutinizer-ci.com/g/laravel-notification-channels/pivotal-tracker)
+[![Code Coverage](https://img.shields.io/scrutinizer/coverage/g/laravel-notification-channels/pivotal-tracker/master.svg?style=flat-square)](https://scrutinizer-ci.com/g/laravel-notification-channels/pivotal-tracker/?branch=master)
+[![Total Downloads](https://img.shields.io/packagist/dt/laravel-notification-channels/pivotal-tracker.svg?style=flat-square)](https://packagist.org/packages/laravel-notification-channels/pivotal-tracker)
 
-This package makes it easy to create stories using [PivotalTracker](https://www.pivotaltracker.com/help/api) with Laravel 5.3
+This package makes it easy to create stories using [pivotal-tracker](https://www.pivotal-tracker.com/help/api) with Laravel 5.3
 
 
 ## Contents
 
 - [Installation](#installation)
-	- [Setting up the PivotalTracker service](#setting-up-the-PivotalTracker-service)
+	- [Setting up the pivotal-tracker service](#setting-up-the-pivotal-tracker-service)
 - [Usage](#usage)
 	- [Available Message methods](#available-message-methods)
 - [Changelog](#changelog)
@@ -31,42 +31,42 @@ This package makes it easy to create stories using [PivotalTracker](https://www.
 You can install the package via composer:
 
 ``` bash
-composer require laravel-notification-channels/pivotaltracker
+composer require laravel-notification-channels/pivotal-tracker
 ```
 
 ## Usage
 
 Now you can use the channel in your via() method inside the notification:
     
-    use NotificationChannels\PivotalTracker\PivotalTrackerChannel;
-    use NotificationChannels\PivotalTracker\PivotalTrackerMessage;
+    use NotificationChannels\pivotal-tracker\pivotal-trackerChannel;
+    use NotificationChannels\pivotal-tracker\pivotal-trackerMessage;
     use Illuminate\Notifications\Notification;
     
     class AnApplicationEvent extends Notification
     {
         public function via($notifiable)
         {
-            return [PivotalTrackerChannel::class];
+            return [pivotal-trackerChannel::class];
         }
     
-        public function toPivotalTracker($notifiable)
+        public function topivotal-tracker($notifiable)
         {
-           return (new PivotalTrackerMessage('Something just occurred!'))
+           return (new pivotal-trackerMessage('Something just occurred!'))
                        ->description('This is a test for a notification via Pivotal Tracker.')
                        ->type('bug')
                        ->labels(['a_chore', 'just_a_test']);
         }
     }
 
-In order to let your Notification know which PivotalTracker user and project you are targeting, add the routeNotificationForPivotalTracker method to your Notifiable model.
+In order to let your Notification know which pivotal-tracker user and project you are targeting, add the routeNotificationForpivotal-tracker method to your Notifiable model.
 
 This method needs to return an array containing the access token of the authorized Pivotal Tracker user and the project ID to add the story to.
 
-    public function routeNotificationForPivotalTracker()
+    public function routeNotificationForpivotal-tracker()
     {
         return [
             'token' => 'NotifiableToken',
-            'projectId' => 'ThePivotalTrackerProjectID'
+            'projectId' => 'Thepivotal-trackerProjectID'
         ];
     }
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace NotificationChannels\PivotalTracker;
+namespace NotificationChannels\pivotal-tracker;
 
 final class StoryType
 {

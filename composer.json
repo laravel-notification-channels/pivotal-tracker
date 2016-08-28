@@ -1,7 +1,7 @@
 {
-    "name": "laravel-notification-channels/pivotaltracker",
+    "name": "laravel-notification-channels/pivotal-tracker",
     "description": "Pivotal Tracker Laravel Notifications driver",
-    "homepage": "https://github.com/laravel-notification-channels/pivotaltracker",
+    "homepage": "https://github.com/laravel-notification-channels/pivotal-tracker",
     "license": "MIT",
     "authors": [
         {
@@ -25,12 +25,12 @@
     },
     "autoload": {
         "psr-4": {
-            "NotificationChannels\\PivotalTracker\\": "src"
+            "NotificationChannels\\pivotal-tracker\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "NotificationChannels\\PivotalTracker\\Test\\": "tests"
+            "NotificationChannels\\pivotal-tracker\\Test\\": "tests"
         }
     },
     "scripts": {
