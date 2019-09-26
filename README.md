@@ -11,6 +11,10 @@
 
 This package makes it easy to create stories using [pivotal-tracker](https://www.pivotal-tracker.com/help/api) with Laravel 5.3
 
+# Deprecated
+This channel is deprecated and no longer maintained. 
+As such, it will not be updated. If you would like to revive it, please create an issue in the new channels repo.
+
 
 ## Contents
 
